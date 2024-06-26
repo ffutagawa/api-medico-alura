@@ -38,17 +38,26 @@ public class Medico {
 	@Embedded
 	private Endereco endereco;
 	
+	private Boolean ativo;
+	
 	public Medico() {
 		
 	}
 	
 	public Medico(DadosCadastroMedico dados) {
+		this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();
         this.crm = dados.crm();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
+	}
+
+	
+	
+	public Boolean getAtivo() {
+		return ativo;
 	}
 
 	public Long getId() {
@@ -91,6 +100,11 @@ public class Medico {
 			this.endereco.atualizarinformacoes(dados.endereco());
 		}
 		
+		
+	}
+
+	public void excluir() {
+		this.ativo = false;
 		
 	}	
 
