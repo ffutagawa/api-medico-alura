@@ -18,51 +18,112 @@ public class Endereco {
 	private String complemento;
 	private String cidade;
 	private String uf;
+
+	public Endereco(DadosEndereco dados) {
+		this.logradouro = dados.logradouro();
+		this.bairro = dados.bairro();
+		this.cep = dados.cep();
+		this.uf = dados.uf();
+		this.cidade = dados.cidade();
+		this.numero = dados.numero();
+		this.complemento = dados.complemento();
+	}
 	
 	public Endereco() {
-	
+		
 	}
 	
-    public Endereco(DadosEndereco dados) {
-        this.logradouro = dados.logradouro();
-        this.bairro = dados.bairro();
-        this.cep = dados.cep();
-        this.uf = dados.uf();
-        this.cidade = dados.cidade();
-        this.numero = dados.numero();
-        this.complemento = dados.complemento();
-    }
 
-	public void atualizarinformacoes(DadosEndereco dados) {
-		if(dados.logradouro() != null) {
+	public Endereco(String logradouro, String bairro, String cep, String numero, String complemento, String cidade,
+			String uf) {
+		super();
+		this.logradouro = logradouro;
+		this.bairro = bairro;
+		this.cep = cep;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.cidade = cidade;
+		this.uf = uf;
+	}
+	
+
+	public String getLogradouro() {
+		return logradouro;
+	}
+
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getUf() {
+		return uf;
+	}
+
+	public void setUf(String uf) {
+		this.uf = uf;
+	}
+
+	public void atualizarInformacoes(DadosEndereco dados) {
+		if (dados.logradouro() != null) {
 			this.logradouro = dados.logradouro();
 		}
-		
-		if(dados.bairro() != null) {
+		if (dados.bairro() != null) {
 			this.bairro = dados.bairro();
 		}
-		
-		if(dados.cep() != null) {
+		if (dados.cep() != null) {
 			this.cep = dados.cep();
 		}
-		
-		if(dados.uf() != null) {
+		if (dados.uf() != null) {
 			this.uf = dados.uf();
 		}
-		
-		if(dados.cidade() != null) {
+		if (dados.cidade() != null) {
 			this.cidade = dados.cidade();
 		}
-		
-		if(dados.numero() != null) {
+		if (dados.numero() != null) {
 			this.numero = dados.numero();
 		}
-		
-		if(dados.complemento() != null) {
+		if (dados.complemento() != null) {
 			this.complemento = dados.complemento();
 		}
-		
 	}
-		
 }
-
